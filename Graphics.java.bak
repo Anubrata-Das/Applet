@@ -1,0 +1,10 @@
+import java.net.*;
+import java.awt.*;
+import java.applet.*;
+
+
+public class Graphics extends Applet{
+	public void paint(Graphics g){
+		g.drawLine(60,40,130,90);
+	}
+}	

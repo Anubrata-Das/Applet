@@ -1,0 +1,14 @@
+import java.applet.*;
+import java.awt.*;
+public class MyApp1 extends Applet{
+	String m;
+	int n;
+	public void init(){
+		m=getParameter("p1");
+		n=Integer.parseInt(getParameter("p2");
+	}
+	public void paint(Graphics g){
+		g.drawString(m,50,40);
+		g.drawString(String.valueOf(n),50,60);
+	}
+}	

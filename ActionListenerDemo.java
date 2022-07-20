@@ -1,0 +1,61 @@
+//ActionListenerDemo
+import java.awt.*;
+import java.awt.event.*;
+class MyWindow extends Frame implements ActionListener
+{
+	Button btn1;
+	Button btn2;
+	
+	public MyWindow()
+	{
+		super("My Window");
+		addWindowListener(new WindowAdapter()
+							{
+								
+								public void windowClosing(WindowEvent we)
+								{
+									System.exit(0);
+								}
+							}
+						);
+		//setSize(800,400);
+		setBounds((1920/2)-(800/2),(1080/2)-(400/2),800,400);
+		setBackground(Color.black);
+		btn1=new Button("Red");
+		btn2=new Button("Green");
+		
+		btn1.setBackground(Color.red);
+		btn2.setBackground(Color.green);
+		
+		btn1.setFont(new Font("Arial",Font.PLAIN,36));
+		btn2.setFont(new Font("Arial",Font.PLAIN,36));
+		setLayout(new FlowLayout());
+		add(btn1);
+		add(btn2);
+		
+		btn1.addActionListener(this);
+		btn2.addActionListener(this);
+		
+		setVisible(true);
+	}
+	public void actionPerformed(ActionEvent ae)
+	{
+		String st=ae.getActionCommand();
+		if(st.equals("Red"))
+		{
+			setBackground(Color.red);
+		}
+		//-----------------------------------
+		if(ae.getSource()==btn2)
+		{
+			setBackground(Color.green);
+		}
+	}
+}
+class Demo
+{
+	public static void main(String[] args)
+	{
+		new MyWindow();
+	}
+}

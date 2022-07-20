@@ -1,0 +1,32 @@
+import java.awt.*;
+import java.awt.event.*;
+
+class MyWindow1 extends Frame
+{
+	public MyWindow1 ()
+	{
+		super("My window1"); //setTitle("My Window1");
+		addWindowListener(new WindowAdapter()
+							{
+								public void windowClosing(WindowEvent we)
+								{
+									System.exit(0);
+								}
+							}
+						);
+		setSize(400,300);
+		setVisible(true);
+		setBackground(Color.pink);
+		setResizable(false);
+		setBounds((1366/2)-(400/2),(768/2)-(300/2),400,300);
+	}
+}
+
+class Demo1
+{
+	public static void main(String[] args)
+	{
+		new MyWindow1();
+	}
+}
+	
